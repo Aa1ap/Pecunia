@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/pen2.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Welcome</h3>
+                          <small style="color: red; font-weight: 1000;">{{msg}}</small>
+                          
+                        
+                          <form #loginform="ngForm" (ngSubmit)="loginUser()" class="register-form" >
+                              <label>Email</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+
+                                  <input type="email" class="form-control" placeholder="Email" name="email" 
+                                  [(ngModel)]="user.email"  required #email="ngModel"  (focus)="focus=true" (blur)="focus=false"
+                                  [class.is-invalid]="email.invalid && email.touched" >
+                              </div>
+                              <small class="text-danger" style="font-weight: 800;" [class.d-none]="email.valid ||email.untouched">Email Address is required!</small>
+            
+                              <br>
+                             <!-- <div *ngIf="email.errors && (email.invalid && email.touched)">
+                              <small class="text-danger"  *ngIf="email.errors.required">Email Id is required field</small>
+                             <small class="text-danger" *ngIf="email.errors.pattern&&email.errors.re">Enter a Valid Email Id!</small>
+                            </div> <br> -->
+
+                              <label>Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                  <input type="password" class="form-control" placeholder="Password" name="password"  
+                                  [(ngModel)]="user.password" required #password="ngModel" (focus)="focus1=true" (blur)="focus1=false" 
+                                  [class.is-invalid]="password.invalid && password.touched" >
+                              </div>
+                              <small class="text-danger" style="font-weight: 800;" [class.d-none]="password.valid ||password.untouched">Password is required!</small>
+                              <br>
+                              <button class="btn btn-danger btn-block btn-round" >Login</button>
+                          </form>
+                          <div class="forgot">
+                              <a (click)="gotoregister()" class="btn btn-link btn-danger">New User? Click here to Register</a>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="footer register-footer text-center">
+                    
+                </div>
+            </div>
+    </div>
+</div>

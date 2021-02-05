@@ -1,0 +1,158 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <img src="assets/img/bankimm.jpeg" class="img-fluid" >
+  <div class="navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+       <li class="nav-item" >
+       <a routerLink = "/home"button type="button" class="btn btn-danger">Home</a>
+       <li class="nav-item" >
+      <a routerLink = "/user-profile"button type="button" class="btn btn-danger">Go back to user-profile</a>
+      </li>
+      </ul></div>
+      </nav>
+<div  class="regform border border-primary">
+  <div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal">
+      <div>
+      
+        <h1> Loan Application</h1>
+      </div>  
+     
+      
+        
+          <div class="form-group ">
+            <label for="firstName" class="control-label">Firstname:</label>
+            <span class="text-danger"*ngIf="form.get('firstName').hasError('required')" >*</span>
+            <div class="col=md-10 regInput" >
+            <input   type="text" class="form-control" id="firstName" placeholder="First name" formControlName="firstName" disabled >
+            </div>
+          </div>
+          <div class="form-group" >
+            <label for="lastName" class="control-label">Last name:</label>
+            <span class="text-danger"*ngIf="form.get('lastName').hasError('required')">*</span>
+             <div class="col=md-10 regInput" >
+            <input type="text" class="form-control" id="lastName" placeholder="Last name" formControlName="lastName" disabled>      
+          </div>   
+          </div>
+       
+         <div class="form-group">
+            <label class="control-label" >Gender: <span class="text-danger"*ngIf="form.get('gender').hasError('required')">*</span></label>
+             <div class="col=md-10 regInput" >
+            <select class="form-control" id="gender" formControlName="gender" aria-placeholder="select" required   >
+      
+              <option value="" selected>Select</option> 
+         <option value='Male'>Male</option>
+          <option value='Female'>Female</option>
+          <option value='Other'>Other</option>
+          </select> 
+         </div>
+         </div>
+     
+         <div class="form-group ">
+            <label class="control-label">Date of birth:</label>
+            <span class="text-danger"*ngIf="form.get('dateOfBirth').hasError('required')">*</span>
+             <div class="col=md-10 regInput" >
+              <input class="form-control" type="date"  id="example-date-input" formControlName="dateOfBirth"disabled >
+            </div>
+          </div>
+            
+        <div class="form-group">
+          <label for="inputAddress" class="control-label">Address:</label>
+          <span class="text-danger"*ngIf="form.get('inputAddress').hasError('required')">*</span>
+           <div class="col=md-10 regInput" >
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="inputAddress" disabled>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="occupation" class="control-label">Occupation:</label>
+          <span class="text-danger"*ngIf="form.get('occupation').hasError('required')">*</span>
+           <div class="col=md-10 regInput" >
+          <input type="text" class="form-control" id="occupation" placeholder="occupation" formControlName="occupation" required >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" >Type of loan: <span class="text-danger"*ngIf="form.get('loantype').hasError('required')">*</span></label>
+         <div class="col=md-10 regInput" >
+        <select class="form-control" id="loantype" formControlName="loantype" aria-placeholder="select" required >
+  
+          <option value="" selected>Select</option> 
+     <option value='Personal Loan'>Personal loan</option>
+      <option value='Home loan'>Home loan</option>
+      <option value='Vehicle loan'>Vehicle loan</option>
+      <option value='Gold loan'>Gold loan</option>
+      </select> 
+     </div>
+     </div>
+
+      <div class="form-group">
+        <label for="occupation" class="control-label">Expected amount:</label>
+        <span class="text-danger"*ngIf="form.get('amount').hasError('required')">*</span>
+         <div class="col=md-10 regInput" >
+        <input type="text" class="form-control" id="amount" placeholder="Expected amount" formControlName="amount" required>
+      </div>
+    </div>
+        <div class="form-group">
+          <label for="" class="control-label">Phone:</label>
+          <span class="text-danger"*ngIf="form.get('phone').hasError('required') ">*</span>
+           <div class="col=md-10 regInput" >
+          <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" formControlName="phone"   disabled></div>
+          <div *ngIf="form.get('phone').hasError('pattern')">  
+            <span style="color: red;"><b>Enter valid phone number</b></span>  
+           </div>  
+
+        </div>
+        
+            <div class="form-group">
+                <label for="" class="control-label">Email:</label>
+                <span class="text-danger"*ngIf="form.get('email').hasError('required') ">*</span>
+                 <div class="col=md-10 regInput" >
+                <input type="text" class="form-control" id="email" placeholder="Eg:xyz@abc.com" formControlName="email"   disabled></div>
+                <div *ngIf="form.get('email').hasError('pattern')">  
+                  <span style="color: red;"><b>Enter valid mail id</b></span>  
+                 </div>  
+     
+              </div>
+
+        <div class="form-group">
+          <label for="" class="control-label">Aadhar UID number:</label>
+          <span class="text-danger" *ngIf="form.get('aadharCard').hasError('required')">*</span>
+           <div class="col=md-10 regInput" >
+          <input type="text" class="form-control" id="aadharCard" placeholder="Enter your 12 digit aadhar number" formControlName="aadharCard"disabled> 
+          </div>
+          <div *ngIf="form.get('aadharCard').hasError('pattern')">  
+            <span style="color: red;"><b>Enter valid 12 digit Aadhar number</b></span>  
+           </div>  
+        </div>
+        <div class="form-group">
+          <label for="" class="control-label">Pan card number:</label>
+          <span class="text-danger"*ngIf="form.get('panCard').hasError('required')">*</span>
+           <div class="col=md-10 regInput" >
+          <input type="text" class="form-control" id="panCard" placeholder="Eg:ALWPG5809L" formControlName="panCard"disabled></div>
+          <div *ngIf="form.get('panCard').hasError('pattern')">  
+            <span style="color: red;"><b>Enter valid Pan card number</b></span>  
+           </div>  
+        </div>
+
+       
+
+    
+        
+         
+        
+        <div class="form-group">
+          <div class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="gridCheck" formControlName=checkBox required style="margin-left: 12px;">
+            <label class="form-check-label" for="gridCheck" style="margin-left: 36px;">
+              I  agree with terms and Conditions
+            </label>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!form.valid" class="btn btn-info btn-lg"  (click)=onClick()>Apply</button>
+   
+        
+    </form>
+    </div>
+  
+
+</div>
+

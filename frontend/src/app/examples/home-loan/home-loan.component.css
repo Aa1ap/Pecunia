@@ -1,0 +1,101 @@
+.regform{
+    background-image: url("assets/img/home_loan.png"); /* The image used */
+    height: auto; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  
+  }
+    
+  
+  input[type=text], input[type=email],input[type=date],select {
+      width: 75%;
+      padding: 15px;
+      /* margin: 5px 0 22px 0; */
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+      margin-left: 9em;
+     
+    }
+
+    select{
+        padding-top: 7px !important;
+    }
+  .regInput{
+    margin-top: -34px;
+    padding-bottom: 17px;
+  }
+    .cont{
+        border: 1px solid black;
+    }
+    h1{
+    
+      text-align: center;
+      margin-top: -55px;
+      padding-bottom: 50px;
+      margin-left: 131px;
+      font-family: ui-monospace;
+      color: white;
+      
+    }
+    
+   
+    /* .container {
+      padding: 16px;
+      
+          width: 75%;
+          clear: both;
+        } */
+        
+        form {
+  
+          max-width: 55%;
+          margin: 10px auto;
+          padding: 10px 20px;
+          background:#f3cea0;
+          border-radius: 8px;
+          opacity: 0.9;
+        }
+   
+    label
+  {	padding-right:8px;
+      
+          font-family: 'Nunito';
+          color: #000000;
+          position: relative;
+      
+  }
+  option{
+  
+    
+    font-family: 'Nunito';
+    color: #384047;
+  }
+  button {
+      
+      padding: 19px 39px 18px 39px;
+      color: #FFF;
+      background-color: #4bc970;
+      font-size: 18px;
+      text-align: center;
+      font-style: normal;
+      border-radius: 5px;
+      width: 50%;
+      border: 1px solid #3ac162;
+      border-width: 1px 1px 3px;
+      box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+      margin-bottom: 10px;
+    }
+    .modalButton{
+      font-size: 10px;
+      background-color: #4CAF50; 
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+    }

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <img src="assets/img/bankimm.jpeg" class="img-fluid" >
+  <div class="navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+       <li class="nav-item" >
+       <a routerLink = "/home"button type="button" class="btn btn-danger">Home</a>
+       <li class="nav-item" >
+      <a routerLink = "/user-profile"button type="button" class="btn btn-danger">Go back to user-profile</a>
+      </li>
+      </ul></div>
+      </nav>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<div class="container" style="margin-top:100px;">
+  <h1 style="font-weight: 500; margin-bottom: 25px;">Loans Applied</h1>         
+ <table class="table table-bordered">
+   <thead>
+     <tr>
+       <th>Loan Type</th>
+       <th>Loan Amount</th>
+       <th>Loan Status</th>
+       </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of userData.userloan">
+        <td>
+          {{loan.loantype}}
+        </td>
+        <td>
+          {{loan.amount}}
+           </td>
+           <td style="font-weight: bold; color: green;">
+         Processing
+        </td>
+     
+    </tbody>
+  </table>
+</div>
